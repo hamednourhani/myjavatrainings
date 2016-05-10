@@ -23,11 +23,11 @@ public class DotCom{
 
 			if(locations.isEmpty()){
 				result = "kill";
-				System.out.println("You Killed this");
+				System.out.println("You Killed this : " + dotComName);
 			} else {
 				result = "hint";
 			}
-		}
+		} 
 
 		return result;
 	}

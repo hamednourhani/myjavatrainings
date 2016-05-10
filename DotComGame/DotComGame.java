@@ -36,7 +36,7 @@ public class DotComGame{
 	}
 	private void playGame(){
 		while(!dotComs.isEmpty()){
-			String newGuess = helper.getUserInput("Enter new Cell : ");
+			String newGuess = helper.getUserInput("Enter a Cell in Grid a1 to g7: ");
 			checkUserGuess(newGuess);
 		}
 		finishGame();
@@ -50,6 +50,7 @@ public class DotComGame{
 		for(DotCom thisDotCom : dotComs){
 			result = thisDotCom.checkYourself(guess);
 			if(result.equals("hint")){
+				System.out.println("Hint -----------");
 				break;
 			}
 			if(result.equals("kill")){
@@ -57,6 +58,10 @@ public class DotComGame{
 				break;
 			}
 		}
+
+		if(result.equals("fail")){
+				System.out.println("Failed --------");
+			}
 
 		return result;
 	}
